@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var getStep3456Button = document.getElementById('step3456');
   getStep3456Button.addEventListener('click', function() {
     var request = $.ajax({
-    url: 'http://first-ajax-api.herokuapp.com/ping',
+    url: 'http://first-ajax-api.herokuapp.com/pong',
     method: 'GET',
     dataType: 'text'
-    }).done(function (responseData) {
-    console.log(responseData);
-    getStep3456Button.innerText += responseData;
-    console.log(getStep3456Button.innerText);
+  }).fail(function (responseData) {
+    // console.log(responseData);
+    getStep3456Button.innerText += "Request failed, we will try to fix it";
+    // console.log(getStep3456Button.innerText);
     });
   });
 
