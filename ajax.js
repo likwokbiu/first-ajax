@@ -29,4 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  var getStep7Button = document.getElementById('step7');
+  getStep7Button.addEventListener('click', function() {
+    var request = $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/count',
+    method: 'GET'
+    }).done(function(responseData) {
+      console.log("Count: " + responseData);
+    });
+  });
+
 });
