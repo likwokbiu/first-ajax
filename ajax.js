@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
     url: 'http://first-ajax-api.herokuapp.com/pong',
     method: 'GET',
     dataType: 'text'
-  }).fail(function (responseData) {
-    // console.log(responseData);
-    getStep3456Button.innerText += "Request failed, we will try to fix it";
+  }).always(function (responseData) {
+    console.log("Hey the request finished!");
+    // getStep3456Button.innerText += "Request failed, we will try to fix it";
     // console.log(getStep3456Button.innerText);
     });
   });
