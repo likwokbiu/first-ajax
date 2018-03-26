@@ -35,7 +35,18 @@ document.addEventListener("DOMContentLoaded", function() {
     url: 'http://first-ajax-api.herokuapp.com/count',
     method: 'GET'
     }).done(function(responseData) {
-      console.log("Count: " + responseData);
+      getStep7Button.querySelector('h2').innerText = "Count: " + responseData;
+    });
+  });
+
+  var getStep8Button = document.getElementById('step8');
+  getStep8Button.addEventListener('click', function() {
+    var request = $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/time',
+    method: 'GET',
+    data: {timezone: "Asia/Hong_Kong"}
+    }).done(function(responseData) {
+      getStep8Button.querySelector('h2').innerText = "Time: " + responseData;
     });
   });
 
